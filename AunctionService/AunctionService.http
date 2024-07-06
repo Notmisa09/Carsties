@@ -1,0 +1,6 @@
+@AunctionService_HostAddress = http://localhost:5155
+
+GET {{AunctionService_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
