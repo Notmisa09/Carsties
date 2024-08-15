@@ -1,7 +1,7 @@
 ﻿using AuctionService.Entities;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace AunctionService.Entities
+namespace AuctionService.Entities
 {
     [Table("Items")]
     public class Item
@@ -19,6 +19,6 @@ namespace AunctionService.Entities
         public Guid? AcutionId { get; set; }
 
         [ForeignKey("AuctionId")]
-        public Auction? Auction { get; set; }
+        public Auction Auction { get; set; }
     }
 }

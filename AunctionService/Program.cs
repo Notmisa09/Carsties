@@ -1,12 +1,15 @@
-using System.Reflection;
-using AunctionService.Data;
-using AunctionService.RequestHelpers;
+using AuctionService.Data;
 using Microsoft.EntityFrameworkCore;
+using AunctionService;
+using AunctionService.MinimalAPI;
+using AunctionService.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+builder.Services.AuctionRegService(builder.Configuration);
+builder.Services.AddTransient< IAuctionService , AuctionService.Services.AuctionService> ();
 builder.Services.AddControllers();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddDbContext<AuctionDbContext>(opt =>
@@ -19,8 +22,8 @@ builder.Services.AddDbContext<AuctionDbContext>(opt =>
 var app = builder.Build();
 
 app.UseAuthorization();
+app.MapAuctionEndPoints();
 
-app.MapControllers();
 
 try
 {

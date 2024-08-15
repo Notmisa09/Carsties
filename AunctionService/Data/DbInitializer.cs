@@ -3,7 +3,7 @@ using AuctionService.Entities;
 using AunctionService.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace AunctionService.Data
+namespace AuctionService.Data
 {
     public class DbInitializer
     {

@@ -1,7 +1,7 @@
 ﻿using AuctionService.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace AunctionService.Data
+namespace AuctionService.Data
 {
     public class AuctionDbContext(DbContextOptions options) : DbContext(options)
     {
